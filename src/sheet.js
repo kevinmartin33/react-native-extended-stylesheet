@@ -74,12 +74,12 @@ export default class {
     const style = new Style(styleProps, this.allVars);
     const {calculatedProps, calculatedVars} = style.calc();
     const merged = Object.assign({}, calculatedVars, calculatedProps);
-    if (key.charAt(0) === '_') {
-      this.result[key] = merged;
-    } else {
-      this.result['_' + key] = merged;
-      this.nativeSheet[key] = calculatedProps;
-    }
+    // if (key.charAt(0) === '_') {
+    this.result[key] = merged;
+    // } else {
+    //   this.result['_' + key] = merged;
+    //   this.nativeSheet[key] = calculatedProps;
+    // }
   }
 
   calcNative() {
